@@ -62,6 +62,53 @@ Click on Inbound Rules and enable the Core Networking Diagnostics - ICMP Echo Re
 
 <br />
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now we can install Active Directory on the domain controller VM. With Server Manager open, click on Add Roles and Features and click Next. 
 </p>
+
+![AD-Lab 16](https://github.com/Jacob-Oq/install-ad/assets/150084528/190a4dd2-60bb-497d-a73b-13c3fc9a6f4a)
+
+  
+<p>Confirm the private IP address of the domain controller VM.</p> 
+
+![AD-Lab 17](https://github.com/Jacob-Oq/install-ad/assets/150084528/0ba2d2cc-f3fa-4ab1-b328-34ed52a50e75)
+
+
+<p>In the Server Roles tab, click on Active Directory Domain Services.</p> 
+
+![AD-Lab 18](https://github.com/Jacob-Oq/install-ad/assets/150084528/9eb01cee-06c2-4af7-b7c3-63bf07288297)
+
+
+<p>Click Add Features, click Next, then Install. Once it's installed click "close" at the bottom.</p> 
+
+![AD-Lab 19](https://github.com/Jacob-Oq/install-ad/assets/150084528/76f87a57-f132-4eeb-8a48-9a6a537de76b)
+
+![AD-Lab 21](https://github.com/Jacob-Oq/install-ad/assets/150084528/ef0edb52-533f-4139-9fe4-44ede9a81c1f)
+
+
+<p>
+Next we have to promote the server into a domain controller. In Server Manager, there is a warning sign in the top right corner under a yellow flag. Click on that flag and click Promote this server to a domain controller. Click on Add a new forest and specify a domain name.
+</p>
+
+![AD-Lab 22](https://github.com/Jacob-Oq/install-ad/assets/150084528/8bcfd579-3158-443a-bd18-4f398182109f)
+
+![AD-Lab 23](https://github.com/Jacob-Oq/install-ad/assets/150084528/7e969d6b-6eba-4284-83fc-39e9bccc4d0d)
+
+
+<p>Specify a password for the domain and click on Next on each screen and Install.</p>
+
+![AD-Lab 24](https://github.com/Jacob-Oq/install-ad/assets/150084528/7d1a48b8-1769-4fa2-ad95-48337101d6b4)
+
 <br />
+
+<h2>An Important Note </h2>
+<p>
+When logging back in to the domain controller VM through Remote Desktop Connection, it is important to log in with the context of the domain. Type out the domain path and then the name of the user. For example: mydomain.com\labuser. In the example below you will see if this is not done correctly, you will not be able to access the domain controller and will have to retype your credentials.
+</p>
+
+![AD-Lab 25](https://github.com/Jacob-Oq/install-ad/assets/150084528/a2185d0e-b621-4496-aad2-7da7084a9657)
+
+<p>
+Now that Active Directory is installed, configurations can be implemented and the client VM will be able to join the domain that was created.
+</p>
+
+
